@@ -1,0 +1,12 @@
+/.bundle
+
+/log/*
+!/log/*.keep
+/tmp
+/.vagrant
+*.keytab
+*.log
+.DS_Store
+*.swp
+*.swo
+

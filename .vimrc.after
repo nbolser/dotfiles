@@ -1,0 +1,36 @@
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+
+" cursor settings
+:set cursorline
+
+" ag root path
+let g:ag_working_path_mode="r"
+
+" no swap
+:set noswapfile
+
+" set paste > paste from clipboard > set nopaste
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
+" remove whitespace
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
+" map Ctrl+S to write file
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+
