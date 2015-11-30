@@ -16,6 +16,9 @@ let g:ag_working_path_mode="r"
 " no swap
 :set noswapfile
 
+" fix nerd to a certain width
+let g:NERDTreeWinSize = 40
+
 " set paste > paste from clipboard > set nopaste
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
