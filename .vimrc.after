@@ -7,17 +7,32 @@ colorscheme solarized
 set textwidth=80
 set colorcolumn=+1
 
+" set system clipboard
+set clipboard=unnamed
+
 " cursor settings
 :set cursorline
 
 " ag root path
 let g:ag_working_path_mode="r"
 
+" execute ruby code within buffer
+:map <leader>r :!ruby %<cr>
+
+" faster pane navigation
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 " no swap
 :set noswapfile
 
-" fix nerd to a certain width
+" keep nerd fixed to width
 let g:NERDTreeWinSize = 40
+
+" quit faster with leader+q
+noremap <leader>q :q<cr>
 
 " set paste > paste from clipboard > set nopaste
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
@@ -32,8 +47,5 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
-" map Ctrl+S to write file
-noremap <silent> <C-S> :update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S> <C-O>:update<CR>
-
+" map leader+s to write file
+noremap <Leader>s :update<CR>
