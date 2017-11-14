@@ -1,16 +1,15 @@
 [user]
-	name = Nathan Bolser
-	email = nathan.bolser@livingsocial.com
+  name = Nathan Bolser
 [push]
-	default = current
+  default = current
 [color]
   ui = auto
 [core]
-	excludesfile = /Users/nathanbolser/.gitignore
+  excludesfile = /Users/nathanbolser/.gitignore
 [pull]
-	rebase = true
- [merge]
-   ff = only
+  rebase = true
+[merge]
+  ff = only
 [alias]
   aa = add --all
   ap = add --patch
@@ -19,11 +18,15 @@
   co = checkout
   st = status
   lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
- [fetch]
-   prune = true
+  please = push --force-with-lease
+  pr = fetch --all -p
+  commend = commit --amend --no-edit
+  shorty = status --short --branch
+[fetch]
+  prune = true
 [commit]
-    template = ~/.gitmessage
+  template = ~/.gitmessage
+[filter "hawser"]
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
