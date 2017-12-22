@@ -5,9 +5,6 @@ alias home='cd ~'
 alias code='cd ~/code'
 alias projects='cd ~/projects'
 alias be='bundle exec '
-alias gck='git checkout '
-alias gs='git status '
-alias rt='rake test'
 
 # CLI / Terminal
 export PS1="\[\033[01;34m\] \w \[\033[31m\]\$(parse_git_branch) \[\033[00m\]$\[\033[00m\] "
